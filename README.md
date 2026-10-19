@@ -1,6 +1,6 @@
 # meetagent.ai landing page
 
-Single static page (`index.html`, no build step) served by GitHub Pages. `.nojekyll` skips Jekyll. No forms yet (decided 2026-10-18).
+Static site served by GitHub Pages, no build step: `index.html` + `style.css` + `app.js` render one radar per agent from `agents.js` (scores per scoring guide v0.1, documentation-based). To add an agent, append an object to `agents.js`.
 
 - Code repo: `C:\Users\user\Desktop\Bobs\Projects\alignPath\meetagent` → GitHub `negentropist/meetagent-site`
 - This vault folder is a mirror; edit in the repo, copy back here.
