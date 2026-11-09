@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dimensions of agent evaluation | MeetAgent</title>
+  <meta name="description" content="Twelve dimensions for evaluating AI agents, from task success to cost per completed task.">
+  <meta property="og:title" content="Dimensions of agent evaluation | MeetAgent">
+  <meta property="og:description" content="Twelve dimensions for evaluating AI agents, from task success to cost per completed task.">
+  <meta property="og:url" content="https://meetagent.ai/dimensions/">
+  <meta property="og:type" content="website">
+  <link rel="canonical" href="https://meetagent.ai/dimensions/">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%235b4cf0'/%3E%3Ccircle cx='12' cy='16' r='5' fill='none' stroke='white' stroke-width='2.5'/%3E%3Ccircle cx='20' cy='16' r='5' fill='none' stroke='white' stroke-width='2.5'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <header>
+    <div class="wrap">
+      <a class="logo" href="../index.html" aria-label="MeetAgent home">
+        <svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="var(--accent)"/><circle cx="12" cy="16" r="5" fill="none" stroke="var(--accent-ink)" stroke-width="2.5"/><circle cx="20" cy="16" r="5" fill="none" stroke="var(--accent-ink)" stroke-width="2.5"/></svg>
+        <b>meetagent<span>.ai</span></b>
+      </a>
+      <nav aria-label="Main"><a href="../index.html">Framework</a><a href="../dimensions/index.html" aria-current="page">Dimensions</a></nav>
+    </div>
+  </header>
+  <main class="wrap">
+    <section class="intro">
+      <h1>Dimensions</h1>
+      <p class="lede">What each dimension means, how to measure it, and how the measurement can mislead.</p>
+    </section>
+    <div class="dim-groups"><section><h2>Task outcomes</h2><a class="dim-card" href="task-success.html"><b>Task success</b><span>Does it complete the task correctly?</span></a><a class="dim-card" href="output-quality.html"><b>Output quality</b><span>Can you use the result as it is?</span></a></section><section><h2>Reliability</h2><a class="dim-card" href="consistency.html"><b>Consistency</b><span>Does the same task give the same quality of result every time?</span></a><a class="dim-card" href="robustness.html"><b>Robustness</b><span>Does it hold up when input is messy, ambiguous or hostile?</span></a><a class="dim-card" href="failing-safely.html"><b>Failing safely</b><span>When it can&#x27;t do something, does it say so?</span></a></section><section><h2>Autonomy</h2><a class="dim-card" href="human-effort.html"><b>Human effort</b><span>How much help does it need to reach a correct result?</span></a><a class="dim-card" href="planning-and-tool-use.html"><b>Planning and tool use</b><span>Does it choose sensible steps and tools?</span></a></section><section><h2>Trust</h2><a class="dim-card" href="checkability.html"><b>Checkability</b><span>Can you verify how it reached the answer?</span></a><a class="dim-card" href="data-handling.html"><b>Data handling</b><span>What happens to the data you give it?</span></a><a class="dim-card" href="permission-limits.html"><b>Permission limits</b><span>Is what it can do limited to what it should do?</span></a></section><section><h2>Economics</h2><a class="dim-card" href="cost-per-completed-task.html"><b>Cost per completed task</b><span>What does a correct result really cost?</span></a><a class="dim-card" href="speed.html"><b>Speed</b><span>How long until you have a usable result?</span></a></section></div>
+  </main>
+  <footer>
+    <div class="wrap">
+      <span>© 2026 MeetAgent</span>
+      <span>Agent Evaluation Framework v0.1</span>
+    </div>
+  </footer>
+</body>
+</html>

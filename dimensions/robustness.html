@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Robustness: evaluating AI agents | MeetAgent</title>
+  <meta name="description" content="Does it hold up when input is messy, ambiguous or hostile? Real work is rarely as clean as a demo.">
+  <meta property="og:title" content="Robustness: evaluating AI agents | MeetAgent">
+  <meta property="og:description" content="Does it hold up when input is messy, ambiguous or hostile? Real work is rarely as clean as a demo.">
+  <meta property="og:url" content="https://meetagent.ai/dimensions/robustness.html">
+  <meta property="og:type" content="website">
+  <link rel="canonical" href="https://meetagent.ai/dimensions/robustness.html">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%235b4cf0'/%3E%3Ccircle cx='12' cy='16' r='5' fill='none' stroke='white' stroke-width='2.5'/%3E%3Ccircle cx='20' cy='16' r='5' fill='none' stroke='white' stroke-width='2.5'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <header>
+    <div class="wrap">
+      <a class="logo" href="../index.html" aria-label="MeetAgent home">
+        <svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="var(--accent)"/><circle cx="12" cy="16" r="5" fill="none" stroke="var(--accent-ink)" stroke-width="2.5"/><circle cx="20" cy="16" r="5" fill="none" stroke="var(--accent-ink)" stroke-width="2.5"/></svg>
+        <b>meetagent<span>.ai</span></b>
+      </a>
+      <nav aria-label="Main"><a href="../index.html">Framework</a><a href="../dimensions/index.html" aria-current="page">Dimensions</a></nav>
+    </div>
+  </header>
+  <main class="wrap">
+    <article class="dim">
+      <p class="crumb"><a href="index.html">Dimensions</a> / Reliability</p>
+      <h1>Robustness</h1>
+      <p class="lede">Does it hold up when input is messy, ambiguous or hostile?</p>
+      <h2>Why it matters</h2><p>Real work is rarely as clean as a demo.</p>
+      <h2>How to measure it</h2><p>Change wording, add errors to the data, leave out details and insert malicious instructions. Compare with clean-input results.</p>
+      <h2>Main threat to the measurement</h2><p>Testing only the variations the agent is known to handle.</p>
+      <h2>Levels</h2>
+      <ul class="levels"><li><span class="lv">L1</span><span class="dots" aria-hidden="true"><i class="on"></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i></span><span>Breaks on small wording or format changes</span></li><li><span class="lv">L2</span><span class="dots" aria-hidden="true"><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i><i class=""></i></span><span>Handles rewording, fails on messy input</span></li><li><span class="lv">L3</span><span class="dots" aria-hidden="true"><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i></span><span>Handles common messiness, sometimes misreads ambiguity</span></li><li><span class="lv">L4</span><span class="dots" aria-hidden="true"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span><span>Handles messy input and asks when a task is ambiguous</span></li><li><span class="lv">L5</span><span class="dots" aria-hidden="true"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span><span>Results barely change under stress, and it resists malicious instructions in content</span></li></ul>
+      
+      <div class="pager"><a href="consistency.html">← Consistency</a><a href="failing-safely.html">Failing safely →</a></div>
+    </article>
+  </main>
+  <footer>
+    <div class="wrap">
+      <span>© 2026 MeetAgent</span>
+      <span>Agent Evaluation Framework v0.1</span>
+    </div>
+  </footer>
+</body>
+</html>

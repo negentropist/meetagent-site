@@ -1,0 +1,222 @@
+{
+ "version": "0.1",
+ "groups": [
+  {
+   "name": "Task outcomes",
+   "dimensions": [
+    {
+     "slug": "task-success",
+     "title": "Task success",
+     "question": "Does it complete the task correctly?",
+     "why": "Nothing else counts if the result is wrong.",
+     "measure": "Run a representative set of tasks with known answers. Count fully correct first attempts.",
+     "threat": "Easy test tasks, or tasks the agent's builders have already seen, inflate the result.",
+     "levels": [
+      "Correct on under 50% of tasks",
+      "Correct on 50–70%, mostly simple tasks",
+      "Correct on 70–85%, including some hard tasks",
+      "Correct on 85–95%, including hard tasks",
+      "Above 95%, including hard and unfamiliar tasks"
+     ],
+     "note": null
+    },
+    {
+     "slug": "output-quality",
+     "title": "Output quality",
+     "question": "Can you use the result as it is?",
+     "why": "A correct answer can still be unusable: badly structured, misleading or missing the point.",
+     "measure": "Score outputs against a written rubric, using two reviewers on a sample. Time the rework.",
+     "threat": "Polished formatting and confident tone can win over reviewers regardless of substance.",
+     "levels": [
+      "Must be redone",
+      "Useful as raw material, heavy rework",
+      "Usable after moderate editing",
+      "Minor edits only",
+      "Meets an expert's rubric without edits"
+     ],
+     "note": null
+    }
+   ]
+  },
+  {
+   "name": "Reliability",
+   "dimensions": [
+    {
+     "slug": "consistency",
+     "title": "Consistency",
+     "question": "Does the same task give the same quality of result every time?",
+     "why": "One good demo tells you little about the next run.",
+     "measure": "Run each task at least three times in fresh sessions. Count tasks correct on every run.",
+     "threat": "Too few runs make an agent look steadier than it is.",
+     "levels": [
+      "Results swing between right and wrong on most tasks",
+      "Right on every run for a minority of tasks",
+      "Right on every run for about half of tasks",
+      "Right on every run for most tasks; differences are minor",
+      "Right on every run for nearly all tasks, and stable across versions"
+     ],
+     "note": null
+    },
+    {
+     "slug": "robustness",
+     "title": "Robustness",
+     "question": "Does it hold up when input is messy, ambiguous or hostile?",
+     "why": "Real work is rarely as clean as a demo.",
+     "measure": "Change wording, add errors to the data, leave out details and insert malicious instructions. Compare with clean-input results.",
+     "threat": "Testing only the variations the agent is known to handle.",
+     "levels": [
+      "Breaks on small wording or format changes",
+      "Handles rewording, fails on messy input",
+      "Handles common messiness, sometimes misreads ambiguity",
+      "Handles messy input and asks when a task is ambiguous",
+      "Results barely change under stress, and it resists malicious instructions in content"
+     ],
+     "note": null
+    },
+    {
+     "slug": "failing-safely",
+     "title": "Failing safely",
+     "question": "When it can't do something, does it say so?",
+     "why": "A confident wrong answer costs more than an admitted failure.",
+     "measure": "Give it impossible or unanswerable tasks. Compare its stated confidence with how often it's right.",
+     "threat": "Rewarding refusals. An agent that refuses everything never gives a confident wrong answer, but it isn't useful.",
+     "levels": [
+      "Wrong answers look the same as right ones",
+      "Fails visibly on crashes, otherwise confident",
+      "Flags some uncertainty, inconsistently",
+      "Reports what failed and stops before making it worse",
+      "Stated confidence matches accuracy; recovers or hands over cleanly"
+     ],
+     "note": null
+    }
+   ]
+  },
+  {
+   "name": "Autonomy",
+   "dimensions": [
+    {
+     "slug": "human-effort",
+     "title": "Human effort",
+     "question": "How much help does it need to reach a correct result?",
+     "why": "An agent that needs constant correction may save no time.",
+     "measure": "Use fixed correction prompts. Count corrections per task, and time spent reviewing.",
+     "threat": "An expert tester corrects faster than a typical user would, which understates the effort.",
+     "levels": [
+      "Must be steered at every step",
+      "Several corrections on most tasks",
+      "One or two corrections per task",
+      "Review only, with occasional correction",
+      "Runs unattended on a defined class of tasks; people handle exceptions"
+     ],
+     "note": null
+    },
+    {
+     "slug": "planning-and-tool-use",
+     "title": "Planning and tool use",
+     "question": "Does it choose sensible steps and tools?",
+     "why": "Wasteful or looping work costs money and hides errors.",
+     "measure": "Read traces. Compare steps taken with an expert's path, and inject tool errors.",
+     "threat": "Rewarding a fixed path when another route is equally good.",
+     "levels": [
+      "Can't use tools usefully",
+      "Uses a tool when told to",
+      "Chooses tools itself, with wasted steps or loops",
+      "Plans multi-step work and recovers from tool errors",
+      "Close to an expert's path, and replans when the plan fails"
+     ],
+     "note": null
+    }
+   ]
+  },
+  {
+   "name": "Trust",
+   "dimensions": [
+    {
+     "slug": "checkability",
+     "title": "Checkability",
+     "question": "Can you verify how it reached the answer?",
+     "why": "Unverifiable answers have to be trusted or redone.",
+     "measure": "Check whether a person could reproduce a sample of results from what the agent shows.",
+     "threat": "An explanation can read well without being how the agent actually got the answer.",
+     "levels": [
+      "Answer only",
+      "Explains its reasoning in prose",
+      "Shows the code, query or sources",
+      "You can edit and re-run them",
+      "Full trace with intermediate results, plus version history or audit log"
+     ],
+     "note": null
+    },
+    {
+     "slug": "data-handling",
+     "title": "Data handling",
+     "question": "What happens to the data you give it?",
+     "why": "Your data may be confidential, regulated or simply not theirs to keep.",
+     "measure": "Read the terms and security documentation for the specific plan. Look for independent certification.",
+     "threat": "A promise on the enterprise plan may not apply to the plan you're using.",
+     "levels": [
+      "Unclear, or used for training with no opt-out",
+      "Used for training by default, with an opt-out",
+      "Not used for training by default; retention documented",
+      "Level 3 plus independent certification (SOC 2 Type II or ISO 27001)",
+      "Level 4 plus admin controls and a choice of region, private deployment or self-hosting"
+     ],
+     "note": null
+    },
+    {
+     "slug": "permission-limits",
+     "title": "Permission limits",
+     "question": "Is what it can do limited to what it should do?",
+     "why": "The more an agent can act, the more damage a mistake or a malicious instruction can cause.",
+     "measure": "Review the permission model. Attempt out-of-scope actions, including through instructions hidden in content.",
+     "threat": "Testing limits only through normal use, and not under attack.",
+     "levels": [
+      "Broad access with no meaningful limits",
+      "All-or-nothing access",
+      "Permissions set per tool",
+      "Least access, with confirmation before irreversible actions",
+      "Level 4, plus limits tested under attack, full action logs and undo"
+     ],
+     "note": "Not applicable to agents that only answer and can't take actions."
+    }
+   ]
+  },
+  {
+   "name": "Economics",
+   "dimensions": [
+    {
+     "slug": "cost-per-completed-task",
+     "title": "Cost per completed task",
+     "question": "What does a correct result really cost?",
+     "why": "Seat prices hide retries, usage charges and review time.",
+     "measure": "Total the fees, usage and review time at a stated hourly rate, then divide by correct results. Compare with doing the work manually.",
+     "threat": "Counting every task, not just those completed correctly, makes the cost look lower than it is.",
+     "levels": [
+      "Unknown or unpredictable",
+      "Predictable, but costs more than doing it manually",
+      "About the same as manual",
+      "Clearly cheaper than manual (2× or more)",
+      "Far cheaper (10× or more), with cost reported per task"
+     ],
+     "note": null
+    },
+    {
+     "slug": "speed",
+     "title": "Speed",
+     "question": "How long until you have a usable result?",
+     "why": "A fast answer that takes an hour to check isn't fast.",
+     "measure": "Time from request to a usable result, including review and correction. Report the median and the slowest cases.",
+     "threat": "Timing only the agent's run and ignoring the person's time.",
+     "levels": [
+      "Slower than manual once review is counted",
+      "Sometimes faster, unpredictably",
+      "About the same as manual, but predictable",
+      "Clearly faster than manual (2× or more)",
+      "Far faster (10× or more), and the slowest cases are still acceptable"
+     ],
+     "note": null
+    }
+   ]
+  }
+ ]
+}
